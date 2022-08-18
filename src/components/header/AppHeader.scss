@@ -1,0 +1,61 @@
+@import "../../assets/style/helpers";
+
+.header-root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.header-left {
+  flex-grow: 1;
+
+  .ant-space-item:nth-child(2) {
+    flex-grow: 1;
+  }
+}
+
+.header-right > * {
+  cursor: pointer;
+}
+
+.organisation-name {
+  $padding: em(10px);
+
+  text-transform: uppercase;
+  padding-right: $padding;
+  padding-left: $padding;
+
+  @include font-style($fs: 14px, $fw: 500,  $lh: 20px)
+}
+
+.organisation-brand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
+.user-avatar {
+  background-color: $app-color;
+}
+
+.header-menu {
+  .ant-menu-item {
+    @include font-style($fs: 16px, $fw: 500,  $lh: 66px);
+
+    &.ant-menu-item-selected span {
+      padding: em(8px) em(12px);
+      background-color: $app-color;
+      color: white;
+      border-radius: 6px;
+    }
+
+    &:hover {
+      color: $app-color !important;
+    }
+
+    &::after {
+      border-bottom: none !important;
+    }
+  }
+}

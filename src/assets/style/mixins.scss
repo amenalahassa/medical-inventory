@@ -1,0 +1,9 @@
+@import "functions";
+
+@mixin font-style($fs: 1, $fw: 500,  $lh: 1, $font: Inter) {
+  font-family: $font, serif;
+  font-style: normal;
+  font-weight: $fw;
+  line-height: rem($lh);
+  font-size: rem($fs);
+}
