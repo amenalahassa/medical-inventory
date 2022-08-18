@@ -33,7 +33,7 @@ function AppHeader() {
       </div>
       <div className="header-right">
         <Space>
-          <SettingOutlined style={{ fontSize: "32px" }} />
+          <SettingOutlined style={{ fontSize: "32px", color: "#667085" }} />
           <Avatar className="user-avatar" icon={<UserOutlined />} />
         </Space>
       </div>

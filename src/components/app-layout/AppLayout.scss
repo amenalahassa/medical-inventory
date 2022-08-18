@@ -4,4 +4,10 @@ main, .ant-layout {
 
 .ant-layout-header {
   background-color: white;
+  box-shadow: 0 0 12px 0 #EAECF0;
+  height: 74px;
+}
+
+.ant-layout-footer {
+  background-color: white;
 }

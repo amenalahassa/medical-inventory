@@ -4,6 +4,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 100%;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center;
 }
 
 .header-left {
@@ -14,8 +20,11 @@
   }
 }
 
-.header-right > * {
-  cursor: pointer;
+.header-right {
+
+  & > * {
+    cursor: pointer;
+  }
 }
 
 .organisation-name {
@@ -40,6 +49,8 @@
 }
 
 .header-menu {
+  border-bottom: none;
+
   .ant-menu-item {
     @include font-style($fs: 16px, $fw: 500,  $lh: 66px);
 

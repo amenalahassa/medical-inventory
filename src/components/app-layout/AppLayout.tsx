@@ -1,6 +1,6 @@
 import "./AppLayout.scss";
 import React from "react";
-import { Breadcrumb, Layout } from "antd";
+import { Layout } from "antd";
 import { getCurrentYear } from "../../assets/js/helpers";
 import AppHeader from "../header/AppHeader";
 import AppContent from "../app-content/AppContent";
@@ -12,7 +12,10 @@ function AppLayout() {
   return (
     <main>
       <Layout>
-        <Header style={{ position: "fixed", zIndex: 1, width: "100%", padding }}>
+        <Header
+          className="app-layout-header"
+          style={{ position: "fixed", zIndex: 1, width: "100%", padding }}
+        >
           <AppHeader />
         </Header>
         <AppContent padding={padding} />
