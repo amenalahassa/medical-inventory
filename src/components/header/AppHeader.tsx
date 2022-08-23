@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./AppHeader.scss";
 import {
   MenuOutlined,
-  MenuUnfoldOutlined,
   RightOutlined,
   SettingOutlined,
   UserOutlined,
