@@ -3,22 +3,17 @@ import React from "react";
 import { Layout } from "antd";
 import { getCurrentYear } from "../../assets/js/helpers";
 import AppHeader from "../header/AppHeader";
-import AppContent from "../app-content/AppContent";
+import { Content } from "antd/es/layout/layout";
 const { Header, Footer } = Layout;
 
 function AppLayout() {
-  let padding = "0 100px";
-
   return (
     <main>
       <Layout>
-        <Header
-          className="app-layout-header"
-          style={{ position: "fixed", zIndex: 1, width: "100%", padding }}
-        >
+        <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
           <AppHeader />
         </Header>
-        <AppContent padding={padding} />
+        <Content className="site-layout" style={{ marginTop: 64 }} />
         <Footer style={{ textAlign: "center" }}>
           Medical Inventory ©{getCurrentYear()}
         </Footer>

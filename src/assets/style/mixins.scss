@@ -1,4 +1,5 @@
 @import "functions";
+@import "breakpoints";
 
 @mixin font-style($fs: 1, $fw: 500,  $lh: 1, $font: Inter) {
   font-family: $font, serif;
@@ -6,4 +7,18 @@
   font-weight: $fw;
   line-height: rem($lh);
   font-size: rem($fs);
+}
+
+@mixin custom-breakpoint ($breakpoint) { //the name of the mixin is devices
+
+  @media only screen and #{$breakpoint} {
+    @content;
+  }
+
+}
+
+@mixin custom-breakpoint-only ($min, $max) {
+  @include custom-breakpoint("(min-width: #{$min}) and (max-width: #{$max})") {
+    @content
+  }
 }
