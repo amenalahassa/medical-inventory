@@ -70,7 +70,7 @@ function AppHeader() {
           <div className="user-shortcuts">
             <Space>
               <Avatar className="user-avatar" icon={<UserOutlined />} />
-              <div className="user-name">Kpedetin</div>
+              <div className="user-name">DOHOU Patricia</div>
               <RightOutlined />
             </Space>
           </div>
