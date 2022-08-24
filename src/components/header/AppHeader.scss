@@ -115,6 +115,10 @@
     @include media-breakpoint-down(sm) {
       display: block;
     }
+
+    .ant-space-item:last-child {
+      margin-left: auto;
+    }
   }
 
   .shortcuts {
