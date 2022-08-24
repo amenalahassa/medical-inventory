@@ -7,6 +7,26 @@ import {
   UserOutlined,
 } from "@ant-design/icons/lib";
 import { Avatar, Drawer, Menu, Space } from "antd";
+import { ItemType } from "antd/lib/menu/hooks/useItems";
+
+const menuItems: ItemType[] | undefined = [
+  {
+    label: "Dashboard",
+    key: 1,
+  },
+  {
+    label: "Fournisseurs",
+    key: 2,
+  },
+  {
+    label: "Magasin",
+    key: 3,
+  },
+  {
+    label: "Ventes",
+    key: 4,
+  },
+];
 
 function AppHeader() {
   const [collapsedSidebar, setCollapsedSidebar] = useState(false);
@@ -31,12 +51,7 @@ function AppHeader() {
               </svg>
               <div className="organisation-name">KPEDETIN</div>
             </div>
-            <Menu mode="horizontal">
-              <Menu.Item>Dashboard</Menu.Item>
-              <Menu.Item>Fournisseurs</Menu.Item>
-              <Menu.Item>Magasin</Menu.Item>
-              <Menu.Item>Ventes</Menu.Item>
-            </Menu>
+            <Menu mode="horizontal" items={menuItems} />
           </Space>
         </div>
         <div className="user-shortcuts">
@@ -60,12 +75,7 @@ function AppHeader() {
         closable={false}
       >
         <div className="sidebar-container">
-          <Menu mode="vertical">
-            <Menu.Item>Dashboard</Menu.Item>
-            <Menu.Item>Fournisseurs</Menu.Item>
-            <Menu.Item>Magasin</Menu.Item>
-            <Menu.Item>Ventes</Menu.Item>
-          </Menu>
+          <Menu mode="vertical" items={menuItems} />
 
           <div className="user-shortcuts">
             <Space>

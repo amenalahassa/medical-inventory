@@ -3,7 +3,7 @@ import React from "react";
 import { Layout } from "antd";
 import { getCurrentYear } from "../../assets/js/helpers";
 import AppHeader from "../header/AppHeader";
-import { Content } from "antd/es/layout/layout";
+import { Content } from "antd/lib/layout/layout";
 const { Header, Footer } = Layout;
 
 function AppLayout() {
