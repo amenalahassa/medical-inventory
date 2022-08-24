@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
     "lint": "eslint .",
-    "deploy": "npm run test && npm run build"
+    "deploy": "react-scripts test && react-scripts build"
   },
   "eslintConfig": {
     "extends": [
