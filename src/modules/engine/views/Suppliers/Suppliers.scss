@@ -1,0 +1,32 @@
+@import "../../../../assets/style/helpers";
+
+.section-content-header {
+
+  .ant-page-header-heading-left {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ant-page-header-heading-title {
+    @include font-style($fs: 30px, $fw: 500,  $lh: 38px);
+
+  }
+
+  .ant-page-header-heading-sub-title {
+    @include font-style($fs: 16px, $lh: 24px,  $fw: 400);
+    color: $subTitleTextColor;
+  }
+
+  .ant-page-header-heading-extra {
+
+    .add-supplier-btn {
+      @include app-btn();
+      @include font-style($fs: 14px, $lh: 20px,  $fw: 500);
+
+    }
+  }
+}
+
+.supplier-page-root {
+  padding-top: em(30px);
+}

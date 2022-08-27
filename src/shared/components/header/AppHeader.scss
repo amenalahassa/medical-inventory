@@ -25,7 +25,7 @@
   padding-left: $padding;
 
   @include font-style($fs: 14px, $fw: 500,  $lh: 20px);
-  color: black;
+  color: $mainTextColor;
 }
 
 .organisation-brand {
