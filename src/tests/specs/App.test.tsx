@@ -1,8 +1,8 @@
 import React from "react";
 import { render, findByText } from "@testing-library/react";
-import App from "../../views/app/App";
+import AppCore from "../../views/App/AppCore";
 
 test("renders App", async () => {
-  const { baseElement } = render(<App />);
+  const { baseElement } = render(<AppCore />);
   expect(await findByText(baseElement, "KPEDETIN")).toBeVisible();
 });

@@ -22,3 +22,15 @@
     @content
   }
 }
+
+@mixin layout-padding($pd) {
+
+  padding-right: em($pd);
+  padding-left: em($pd);
+
+  @include media-breakpoint-up(lg) {
+    padding-left: em($pd * 2);
+    padding-right: em($pd * 2);
+  }
+
+}
