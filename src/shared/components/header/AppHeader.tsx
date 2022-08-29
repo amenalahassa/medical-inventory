@@ -10,17 +10,11 @@ import { Avatar, Drawer, Menu, Space } from "antd";
 import { Link } from "react-router-dom";
 import EngineModuleRoute from "../../../modules/engine/assets/routes";
 import { formatRouteToMenuItems } from "../../../assets/js/helpers";
-import { IAppRoutedMenuItem } from "../../interfaces/IAppRoute";
 
 function AppHeader() {
   const [collapsedSidebar, setCollapsedSidebar] = useState(false);
 
   const menuItems = formatRouteToMenuItems(EngineModuleRoute);
-
-  const defaultSelectedMenuKey = () => {
-    const index = menuItems.find((m: IAppRoutedMenuItem) => m.routeIndex);
-    return index ? [index.key] : [];
-  };
 
   return (
     <>
@@ -44,11 +38,7 @@ function AppHeader() {
                 <div className="organisation-name">KPEDETIN</div>
               </div>
             </Link>
-            <Menu
-              mode="horizontal"
-              defaultSelectedKeys={defaultSelectedMenuKey()}
-              items={menuItems}
-            />
+            <Menu mode="horizontal" items={menuItems} />
           </Space>
         </div>
         <div className="user-shortcuts">
@@ -72,11 +62,7 @@ function AppHeader() {
         closable={false}
       >
         <div className="sidebar-container">
-          <Menu
-            mode="vertical"
-            defaultSelectedKeys={defaultSelectedMenuKey()}
-            items={menuItems}
-          />
+          <Menu mode="vertical" items={menuItems} />
           <div className="user-shortcuts">
             <Space>
               <Avatar className="user-avatar" icon={<UserOutlined />} />

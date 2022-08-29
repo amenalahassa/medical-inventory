@@ -1,0 +1,9 @@
+@import "mixins";
+
+.btn-primary {
+  @include app-btn();
+}
+
+.btn-danger {
+  @include app-btn($color: white, $bg: red);
+}

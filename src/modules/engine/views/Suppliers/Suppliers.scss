@@ -21,13 +21,9 @@
   }
 }
 
-.add-supplier-btn {
-  @include app-btn();
-  @include font-style($fs: 14px, $lh: 20px,  $fw: 500);
-}
-
 .supplier-page-root {
   padding-top: em(30px);
+  margin-bottom: em(100px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -56,5 +52,86 @@
         color: $subTitleTextColor;
       }
     }
+  }
+}
+
+.add-supplier-btn {
+  @include font-style($fs: 14px, $lh: 20px,  $fw: 500);
+
+  @extend .btn-primary
+}
+
+.supplier-list {
+  margin-top: em(16px);
+  $border-radius: em(10px);
+  background-color: white;
+  border-radius: $border-radius;
+  border: 1px solid #EAECF0;
+  box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
+
+
+  .table-box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: em(12px) em(16px);
+    background-color: #F9FAFB;
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+
+    .ant-input-search {
+      width: em(400px);
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+      border-radius: 8px;
+
+      input::placeholder {
+        @include font-style($fs: 16px, $lh: 24px,  $fw: 400);
+      }
+
+      .ant-input-group .ant-input-affix-wrapper:not(:last-child) {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+      }
+
+      & > .ant-input-group > .ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        background-color: $app-color;
+        color: white;
+      }
+    }
+
+
+    .ant-input-group {
+      border-radius: 8px;
+    }
+  }
+
+  .ant-table-thead > tr > th {
+    background-color: white;
+    padding: em(12px) em(24px);
+  }
+
+  .ant-table-thead .ant-table-cell {
+    @include font-style($fs: 14px, $lh: 18px,  $fw: 500);
+    color: $subTitleTextColor;
+  }
+
+  .ant-table-tbody > tr > td {
+    @include font-style($fs: 14px, $lh: 20px,  $fw: 500);
+  }
+
+  .ant-table-row .ant-table-cell {
+    color: $subTitleTextColor;
+
+    &:nth-child(2) {
+      color: $mainTextColor;
+    }
+  }
+
+
+  .ant-table-pagination {
+    padding-left: em(16px);
+    padding-right: em(16px);
   }
 }

@@ -1,14 +1,13 @@
-import { IAppRoute, IAppRoutedMenuItem } from "../../shared/interfaces/IAppRoute";
+import { IAppRoute } from "../../shared/interfaces/IAppRoute";
 import { Link, Route } from "react-router-dom";
 import React from "react";
+import { ItemType } from "antd/lib/menu/hooks/useItems";
 
 export function getCurrentYear() {
   return new Date().getFullYear();
 }
 
-export function formatRouteToMenuItems(
-  routes: Array<IAppRoute>
-): IAppRoutedMenuItem[] {
+export function formatRouteToMenuItems(routes: Array<IAppRoute>): ItemType[] {
   return routes.map((route, index) => {
     function MenuLink() {
       return <Link to={route.path}>{route.label}</Link>;
@@ -17,7 +16,6 @@ export function formatRouteToMenuItems(
     return {
       label: MenuLink(),
       key: String(index),
-      routeIndex: route.index,
     };
   });
 }

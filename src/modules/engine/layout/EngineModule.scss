@@ -23,6 +23,7 @@ main, .ant-layout {
 .ant-layout-content {
   background-color: #fff;
   margin-top: $headerHeight;
+  overflow-y: auto;
 
   @include layout-padding(50px);
 }
