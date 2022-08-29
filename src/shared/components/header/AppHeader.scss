@@ -134,13 +134,15 @@
     }
   }
 
-  .mobile-sidebar-trigger {
-    margin-left: em(15px);
-    cursor: pointer;
-
+  .ant-space-item:last-child {
     @include media-breakpoint-up(md) {
       display: none;
     }
+  }
+
+  .mobile-sidebar-trigger {
+    margin-left: em(15px);
+    cursor: pointer;
   }
 
   .ant-avatar {
