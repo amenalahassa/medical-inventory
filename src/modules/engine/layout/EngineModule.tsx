@@ -1,19 +1,23 @@
-import "./AppLayout.scss";
+import "./EngineModule.scss";
 import React from "react";
 import { Layout } from "antd";
-import { getCurrentYear } from "../../assets/js/helpers";
-import AppHeader from "../header/AppHeader";
+import { getCurrentYear, renderRoute } from "../../../assets/js/helpers";
+import AppHeader from "../../../shared/components/header/AppHeader";
 import { Content } from "antd/lib/layout/layout";
+import { Routes } from "react-router-dom";
+import EngineModuleRoute from "../../../modules/engine/assets/routes";
 const { Header, Footer } = Layout;
 
-function AppLayout() {
+function EngineModule() {
   return (
     <main>
       <Layout>
         <Header style={{ position: "fixed", zIndex: 1, width: "100%" }}>
           <AppHeader />
         </Header>
-        <Content className="site-layout" style={{ marginTop: 64 }} />
+        <Content>
+          <Routes>{EngineModuleRoute.map(renderRoute)}</Routes>
+        </Content>
         <Footer style={{ textAlign: "center" }}>
           Medical Inventory ©{getCurrentYear()}
         </Footer>
@@ -22,4 +26,4 @@ function AppLayout() {
   );
 }
 
-export default AppLayout;
+export default EngineModule;

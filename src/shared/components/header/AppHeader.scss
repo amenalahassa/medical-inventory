@@ -1,4 +1,4 @@
-@import "../../assets/style/helpers";
+@import "../../../assets/style/helpers";
 
 .header-root {
   display: flex;
@@ -24,14 +24,15 @@
   padding-right: $padding;
   padding-left: $padding;
 
-  @include font-style($fs: 14px, $fw: 500,  $lh: 20px)
+  @include font-style($fs: 14px, $fw: 500,  $lh: 20px);
+  color: $mainTextColor;
 }
 
 .organisation-brand {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .user-avatar {
@@ -69,6 +70,10 @@
 
 .ant-menu-item {
   @include font-style($fs: 16px, $fw: 500,  $lh: 66px);
+
+  .ant-menu-title-content a, .ant-menu-title-content a:hover {
+    color: inherit;
+  }
 
   .header-root & {
     &.ant-menu-item-selected span {
@@ -129,13 +134,15 @@
     }
   }
 
-  .mobile-sidebar-trigger {
-    margin-left: em(15px);
-    cursor: pointer;
-
+  .ant-space-item:last-child {
     @include media-breakpoint-up(md) {
       display: none;
     }
+  }
+
+  .mobile-sidebar-trigger {
+    margin-left: em(15px);
+    cursor: pointer;
   }
 
   .ant-avatar {

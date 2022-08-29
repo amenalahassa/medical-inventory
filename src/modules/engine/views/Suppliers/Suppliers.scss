@@ -1,0 +1,60 @@
+@import "../../../../assets/style/helpers";
+
+.section-content-header {
+
+  padding-left: 0;
+  padding-right: 0;
+
+  .ant-page-header-heading-left {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ant-page-header-heading-title {
+    @include font-style($fs: 30px, $fw: 500,  $lh: 38px);
+
+  }
+
+  .ant-page-header-heading-sub-title {
+    @include font-style($fs: 16px, $lh: 24px,  $fw: 400);
+    color: $subTitleTextColor;
+  }
+}
+
+.add-supplier-btn {
+  @include app-btn();
+  @include font-style($fs: 14px, $lh: 20px,  $fw: 500);
+}
+
+.supplier-page-root {
+  padding-top: em(30px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.supplier-page-content {
+  flex-grow: 1;
+
+  .ant-empty {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .ant-empty-description {
+      margin-top: em(18px);
+
+      span {
+        @include font-style($fs: 20px, $lh: 30px,  $fw: 500);
+      }
+
+      p {
+        margin-top: em(8px);
+        @include font-style($fs: 16px, $lh: 30px,  $fw: 400);
+        color: $subTitleTextColor;
+      }
+    }
+  }
+}

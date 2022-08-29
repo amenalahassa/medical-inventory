@@ -1,5 +1,6 @@
 @import "functions";
 @import "breakpoints";
+@import "colors";
 
 @mixin font-style($fs: 1, $fw: 500,  $lh: 1, $font: Inter) {
   font-family: $font, serif;
@@ -22,3 +23,35 @@
     @content
   }
 }
+
+@mixin layout-padding($pd) {
+
+  padding-right: em($pd);
+  padding-left: em($pd);
+
+  @include media-breakpoint-up(lg) {
+    padding-left: em($pd * 2);
+    padding-right: em($pd * 2);
+  }
+
+}
+
+@mixin background-color-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+
+@mixin app-btn($color: white, $bg: $app-color, $rd: 6px) {
+  padding: em(10px) em(16px);
+  background-color: $bg;
+  color: $color;
+  border-radius: $rd;
+  height: 44px;
+  border-color: $bg;
+
+  &:hover, &:focus {
+    @include background-color-opacity($app-color, .9)
+  }
+}
+
