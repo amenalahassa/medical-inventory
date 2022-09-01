@@ -11,19 +11,31 @@
   }
 
   .ant-page-header-heading-title {
-    @include font-style($fs: 30px, $fw: 500,  $lh: 38px);
 
+    @include media-breakpoint-up(sm) {
+      @include font-style($fs: 30px, $fw: 500,  $lh: 38px);
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include font-style($fs: 25px, $fw: 500,  $lh: 38px);
+    }
   }
 
   .ant-page-header-heading-sub-title {
-    @include font-style($fs: 16px, $lh: 24px,  $fw: 400);
     color: $subTitleTextColor;
+
+    @include media-breakpoint-up(sm) {
+      @include font-style($fs: 16px, $lh: 24px,  $fw: 400);
+    }
+
+    @include media-breakpoint-down(sm) {
+      @include font-style($fs: 14px, $lh: 24px,  $fw: 400);
+    }
   }
 
   .ant-page-header-heading-extra {
     display: flex;
     align-items: center;
-
   }
 }
 
@@ -44,25 +56,39 @@
     justify-content: center;
     flex-direction: column;
 
+    .ant-empty-image {
+      height: 150px;
+
+      @include media-breakpoint-down(sm) {
+        height: 120px;
+      }
+    }
+
     .ant-empty-description {
       margin-top: em(18px);
 
       span {
+
         @include font-style($fs: 20px, $lh: 30px,  $fw: 500);
+        @include media-breakpoint-down(sm) {
+          font-size: rem(18px);
+        }
       }
 
       p {
         margin-top: em(8px);
-        @include font-style($fs: 16px, $lh: 30px,  $fw: 400);
         color: $subTitleTextColor;
+
+        @include font-style($fs: 16px, $lh: 30px,  $fw: 400);
+        @include media-breakpoint-down(sm) {
+          font-size: rem(15px);
+        }
       }
     }
   }
 }
 
 .add-supplier-btn {
-  @include font-style($fs: 14px, $lh: 20px,  $fw: 500);
-
   @extend .btn-primary;
 
   @include media-breakpoint-down(md) {

@@ -49,9 +49,6 @@ function Suppliers() {
         {suppliers.length == 0 ? (
           <Empty
             image={<EmptyBoxLogo />}
-            imageStyle={{
-              height: 150,
-            }}
             description={
               <div>
                 <span>Votre liste de fournisseur est vide</span>
