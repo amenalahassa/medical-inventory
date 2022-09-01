@@ -29,25 +29,26 @@ function Suppliers() {
         className="section-content-header"
         title="Fournisseurs"
         subTitle="Ajouter vos contacts fournisseurs"
-        extra={[
-          <Button
-            onClick={() => addSupplier()}
-            key="1"
-            type="primary"
-            className="add-supplier-btn"
-          >
-            <PlusOutlined />
-            Ajouter un fournisseur
-          </Button>,
-        ]}
+        extra={
+          suppliers.length !== 0
+            ? [
+                <Button
+                  onClick={() => addSupplier()}
+                  key="1"
+                  type="primary"
+                  className="add-supplier-btn"
+                >
+                  <PlusOutlined />
+                  Ajouter
+                </Button>,
+              ]
+            : []
+        }
       />
       <div className="supplier-page-content">
         {suppliers.length == 0 ? (
           <Empty
             image={<EmptyBoxLogo />}
-            imageStyle={{
-              height: 150,
-            }}
             description={
               <div>
                 <span>Votre liste de fournisseur est vide</span>
@@ -58,7 +59,11 @@ function Suppliers() {
               </div>
             }
           >
-            <Button type="primary" className="add-supplier-btn">
+            <Button
+              type="primary"
+              className="add-supplier-btn"
+              onClick={() => addSupplier()}
+            >
               Ajouter un fournisseur
             </Button>
           </Empty>
@@ -83,10 +88,18 @@ function Suppliers() {
               className="table-box"
               rowSelection={rowSelection}
               dataSource={suppliers}
+              rowKey="id"
+              scroll={{ x: true }}
             >
               <Column title="Nom" dataIndex="name" key="age" />
               <Column title="Contact" dataIndex="tel" key="contact" />
               <Column title="Localisation" dataIndex="address" key="place" />
+              <Column
+                title=""
+                dataIndex="view"
+                key="view"
+                render={(value, record, index) => <a>View</a>}
+              />
             </Table>
           </div>
         )}
