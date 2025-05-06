@@ -34,6 +34,11 @@
     padding-right: em($pd * 2);
   }
 
+  @include media-breakpoint-down(sm) {
+    padding-left: em($pd / 2);
+    padding-right: em($pd / 2);
+  }
+
 }
 
 @mixin background-color-opacity($color, $opacity: 0.3) {
@@ -53,5 +58,10 @@
   &:hover, &:focus {
     @include background-color-opacity($app-color, .9)
   }
+
+  span {
+    @include font-style($fs: 14px, $lh: 20px,  $fw: 500);
+  }
+
 }
 
